@@ -22,7 +22,10 @@ public class LogTraceEventManager {
 		listeners.put(eventType, listener);
 	}
 	
+	
 	public void flush() {
+		//TODO extract stage events and define a new structure log variable, for example:
+		
 		listeners.forEach((listenerKey, listenerValue) -> listenerValue.notify(stageEvents.values()));
 	}
 	
