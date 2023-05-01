@@ -23,8 +23,11 @@ public class LogTraceEventManager {
 	}
 	
 	public void flush() {
-		stageEvents.forEach((stageKey,stageValue) ->  
-			listeners.forEach((listenerKey, listenerValue) -> listenerValue.update(stageKey, stageValue) ));
+//		stageEvents.forEach((stageKey,stageValue) ->  
+//			listeners.forEach((listenerKey, listenerValue) 
+//					-> listenerValue.update(stageKey, stageValue))
+//			);
+		listeners.forEach((listenerKey, listenerValue) -> listenerValue.notify(stageEvents.values()));
 	}
 	
 	public void put(String stage, Object data) {

@@ -17,23 +17,23 @@ public class EmissaoController {
 		
 		final LogTrace logTrace = new LogTrace();
 		
-		logTrace.put("EmissaoController", cobranca);
-		logTrace.put("Commandprocessor", cobranca);
+		logTrace.put("EMISSAO-CTLR-INFO-01", cobranca);
+		logTrace.put("CMD-PRCSSR-INFO-01", cobranca);
 		
 		//simular alteração txid
 		cobranca.setTxid("RPC00000000000001");
-		logTrace.put("Commandprocessor info 2", cobranca);
+		logTrace.put("CMD-PRCSSR-INFO-02", cobranca);
 		
 		//simular manipulação objeto recebedor "VISITOR"
 		final Recebedor recebedor = new Recebedor();
 		
 		recebedor.setNome("Pedro");
 		recebedor.setCpf("6546484979");
-		logTrace.put("Visitor recebedor 1", recebedor);
+		logTrace.put("DFNE-RCBDR-VSTR-01", recebedor);
 	
 		//adicionando object recebedor na cobrança
 		cobranca.setRecebedor(recebedor);
-		logTrace.put("Kafka publisher", cobranca);
+		logTrace.put("ADPTR-KAFKA-INF-01", cobranca);
 	
 				
 		logTrace.flush();
