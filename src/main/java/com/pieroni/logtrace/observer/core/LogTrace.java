@@ -1,6 +1,5 @@
 package com.pieroni.logtrace.observer.core;
 
-import com.pieroni.logtrace.observer.domain.Cobranca;
 
 public class LogTrace {
 
@@ -11,7 +10,7 @@ public class LogTrace {
 		logTraceEvent.subscribe("log", new LogListener());
 	}
 	
-	public void put(String stage, Cobranca object) {
+	public void put(String stage, Object object) {
 		logTraceEvent.put(stage, object);
 	}
 	
